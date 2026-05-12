@@ -46,7 +46,7 @@ export function Header() {
 				)}
 			>
 				<a href="#home" className="shrink-0 flex items-center">
-                   <img src="/images-mjv/mjv_logistics-logo.png" alt="MJV Courier" className="h-8 w-auto md:h-10" />
+                   <img src="images-mjv/mjv_logistics-logo.png" alt="MJV Courier" className="h-8 w-auto md:h-10" />
                 </a>
 				<div className="hidden items-center gap-2 md:flex">
 					{links.map((link, i) => (

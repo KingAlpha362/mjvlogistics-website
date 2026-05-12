@@ -2,10 +2,10 @@ import { PageContainer } from '../layout/PageContainer';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const values = [
-  { title: 'Integrity', text: 'Doing what is right even when no one is watching.', icon: '/flaticons/delivery-man.png' },
-  { title: 'Speed', text: 'Time-definite courier slots you can plan around.', icon: '/flaticons/express-delivery.png' },
-  { title: 'Care', text: 'Parcels handled like they matter — because they do.', icon: '/flaticons/package-delivery.png' },
-  { title: 'Clarity', text: 'Straight answers on cut-offs, routes, and pricing.', icon: '/flaticons/delivery-status.png' },
+  { title: 'Integrity', text: 'Doing what is right even when no one is watching.', icon: 'flaticons/delivery-man.png' },
+  { title: 'Speed', text: 'Time-definite courier slots you can plan around.', icon: 'flaticons/express-delivery.png' },
+  { title: 'Care', text: 'Parcels handled like they matter — because they do.', icon: 'flaticons/package-delivery.png' },
+  { title: 'Clarity', text: 'Straight answers on cut-offs, routes, and pricing.', icon: 'flaticons/delivery-status.png' },
 ];
 
 export function Values() {

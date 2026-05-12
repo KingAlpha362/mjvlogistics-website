@@ -26,7 +26,7 @@ export function Contact() {
         >
           <div className="relative h-56 sm:h-64 md:h-auto md:min-h-[min(100%,420px)]">
             <img
-              src="/images-mjv/vehicle-fleet-8.png"
+              src="images-mjv/vehicle-fleet-8.png"
               alt="MJV courier vehicle"
               className="h-full w-full object-cover opacity-95 md:min-h-[320px]"
               width={480}

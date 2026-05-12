@@ -59,7 +59,7 @@ export function Coverage() {
         <div className="glass-panel-strong mx-auto w-full max-w-lg rounded-2xl p-5 shadow-lift">
           <div className="relative w-full aspect-[4/3] mx-auto">
             <img 
-              src="/images-mjv/south african map.png" 
+              src="images-mjv/south-african-map.png" 
               alt="Map of South Africa" 
               className="w-full h-full object-contain"
             />

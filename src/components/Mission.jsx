@@ -48,7 +48,7 @@ export function Mission() {
         <div ref={revealA} className="relative h-[65vw] max-h-[450px] w-full max-w-4xl mx-auto my-8">
           <figure className="absolute left-0 top-0 w-[65%] h-[80%] overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-10 ring-1 ring-black/5 transition-transform duration-700 hover:-translate-y-2 group">
             <img
-              src="/images-mjv/vehicle-fleet-5.jpg"
+              src="images-mjv/vehicle-fleet-5.jpg"
               alt="Courier fleet staged for distribution"
               className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
               width={640}
@@ -59,7 +59,7 @@ export function Mission() {
           </figure>
           <figure className="absolute right-0 bottom-0 w-[55%] h-[75%] overflow-hidden rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.2)] z-20 ring-[6px] ring-white transition-transform duration-700 hover:-translate-y-2 group bg-white">
             <img
-              src="/images-mjv/vehicle-fleet-6.jpg"
+              src="images-mjv/vehicle-fleet-6.jpg"
               alt="MJV courier truck on route"
               className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
               width={640}

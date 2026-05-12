@@ -106,7 +106,7 @@ export function Hero() {
           <div className="absolute -inset-4 md:-inset-6 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-tr from-brand/15 via-transparent to-blue-600/10 blur-2xl md:blur-3xl opacity-80"></div>
           <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-[1.5rem] md:rounded-[2rem] bg-slate-100 shadow-[0_20px_80px_rgba(0,0,0,0.12)] ring-1 ring-black/5 group">
             <img
-              src="/images-mjv/vehicle-fleet-1.jpg"
+              src="images-mjv/vehicle-fleet-1.jpg"
               alt="MJV courier vehicle on delivery"
               className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
               width={1000}
@@ -118,7 +118,7 @@ export function Hero() {
             {/* Premium decorative badge over the image */}
             <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 rounded-xl md:rounded-2xl bg-white/95 px-4 py-3 md:px-6 md:py-4 shadow-2xl backdrop-blur-md flex items-center gap-3 md:gap-4">
               <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-brand/10">
-                <img src="/flaticons/delivery-service.png" alt="Delivery Service" className="h-6 w-6 md:h-7 md:w-7 object-contain" />
+                <img src="flaticons/delivery-service.png" alt="Delivery Service" className="h-6 w-6 md:h-7 md:w-7 object-contain" />
               </div>
               <div>
                 <p className="font-display text-sm font-bold text-courier-ink md:text-base">National Fleet</p>

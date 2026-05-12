@@ -41,7 +41,7 @@ export function Navbar() {
       <PageContainer className="flex items-center justify-between gap-4">
         <a href="#home" className="shrink-0 outline-none ring-brand focus-visible:ring-2 ring-offset-2 rounded">
           <img
-            src="/images-mjv/mjv_logistics-logo.png"
+            src="images-mjv/mjv_logistics-logo.png"
             alt="MJV Courier"
             className="h-10 w-auto md:h-11"
             width="160"

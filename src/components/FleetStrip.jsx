@@ -2,9 +2,9 @@ import { PageContainer } from '../layout/PageContainer';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const imgs = [
-  { src: '/images-mjv/vehicle-fleet-7.jpg', alt: 'Line-haul courier truck' },
-  { src: '/images-mjv/vehicle-fleet-8.png', alt: 'Metro distribution vehicle' },
-  { src: '/images-mjv/vehicle-fleet-9.png', alt: 'Express courier van' },
+  { src: 'images-mjv/vehicle-fleet-7.jpg', alt: 'Line-haul courier truck' },
+  { src: 'images-mjv/vehicle-fleet-8.png', alt: 'Metro distribution vehicle' },
+  { src: 'images-mjv/vehicle-fleet-9.png', alt: 'Express courier van' },
 ];
 
 export function FleetStrip() {

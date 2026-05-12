@@ -6,7 +6,7 @@ export function Footer() {
       <PageContainer>
         <div className="inline-flex rounded-xl border border-white/20 bg-white px-8 py-3 shadow-lg">
           <img
-            src="/images-mjv/mjv_logistics-logo.png"
+            src="images-mjv/mjv_logistics-logo.png"
             alt="MJV Courier"
             className="h-12 w-auto"
             width={180}

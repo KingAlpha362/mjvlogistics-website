@@ -19,7 +19,7 @@ export function Leadership() {
             className="glass-panel overflow-hidden rounded-2xl shadow-lg lg:sticky lg:top-28"
           >
             <img
-              src="/images-mjv/vehicle-fleet-7.jpg"
+              src="images-mjv/vehicle-fleet-7.jpg"
               alt="MJV courier operations"
               className="aspect-[21/9] w-full object-cover lg:aspect-[4/5] lg:min-h-[360px]"
               width={560}
