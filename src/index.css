@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply border border-white/50 bg-white/65 shadow-glass backdrop-blur-xl;
+  }
+  .glass-panel-strong {
+    @apply border border-white/60 bg-white/75 shadow-glass backdrop-blur-2xl;
+  }
+  .glass-dark {
+    @apply border border-white/10 bg-courier-ink/40 text-white shadow-glass backdrop-blur-xl;
+  }
+}
