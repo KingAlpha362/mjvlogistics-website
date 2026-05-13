@@ -1,5 +1,5 @@
 import { PageContainer } from '../layout/PageContainer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { Reveal } from './ui/Reveal';
 
 const values = [
   { title: 'Integrity', text: 'Doing what is right even when no one is watching.', icon: 'flaticons/delivery-man.png' },
@@ -9,13 +9,11 @@ const values = [
 ];
 
 export function Values() {
-  const reveal = useScrollReveal();
-
   return (
     <div className="relative z-10 -mt-10 pb-4 md:-mt-12">
       <PageContainer>
-        <div
-          ref={reveal}
+        <Reveal
+          stagger={0.1}
           className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5"
         >
           {values.map((v) => (
@@ -30,7 +28,7 @@ export function Values() {
               <p className="mt-2 text-sm leading-relaxed text-courier-muted">{v.text}</p>
             </article>
           ))}
-        </div>
+        </Reveal>
       </PageContainer>
     </div>
   );

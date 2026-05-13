@@ -1,5 +1,5 @@
 import { PageContainer } from '../layout/PageContainer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { Reveal } from './ui/Reveal';
 
 const services = [
   {
@@ -43,19 +43,23 @@ const AlternateImageMockup = ({ children, className = "" }) => {
 };
 
 export function Services() {
-  const reveal = useScrollReveal();
-
   return (
     <section id="services" className="overflow-hidden bg-slate-50 py-16 sm:py-20 md:py-28">
       <PageContainer>
-        <header ref={reveal} className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-center text-center">
-          <span className="text-sm font-bold uppercase tracking-widest text-brand md:text-base">Features</span>
-          <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-courier-ink md:text-5xl">
-            Courier <span className="text-brand">services</span>
-          </h2>
-          <p className="mt-5 text-lg text-courier-muted md:text-xl leading-relaxed">
-            Built for retailers, clinics, and industrial shippers who need predictable cut-offs and proof of delivery.
-          </p>
+        <header className="mx-auto mb-16 flex w-full max-w-3xl flex-col items-center text-center">
+          <Reveal>
+            <span className="text-sm font-bold uppercase tracking-widest text-brand md:text-base">Features</span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-courier-ink md:text-5xl">
+              Courier <span className="text-brand">services</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="mt-5 text-lg text-courier-muted md:text-xl leading-relaxed">
+              Built for retailers, clinics, and industrial shippers who need predictable cut-offs and proof of delivery.
+            </p>
+          </Reveal>
         </header>
 
         <div className="mx-auto flex w-full flex-col gap-16 md:gap-24 lg:gap-32">
@@ -63,7 +67,7 @@ export function Services() {
             const isEven = index % 2 === 1;
             return (
               <div key={s.title} className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-24 items-center">
-                <div className={`max-w-xl flex-1 self-center ${isEven ? 'lg:order-last lg:pl-10' : 'lg:pr-10'}`}>
+                <Reveal direction={isEven ? 'right' : 'left'} className={`max-w-xl flex-1 self-center flex flex-col items-center text-center lg:items-start lg:text-left ${isEven ? 'lg:order-last lg:pl-10' : 'lg:pr-10'}`}>
                   <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-light text-2xl text-brand shadow-sm ring-1 ring-brand/20">
                     <img src={s.icon} alt={s.title} className="h-8 w-8 object-contain" />
                   </span>
@@ -83,9 +87,9 @@ export function Services() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Reveal>
 
-                <div className="relative w-full flex-1 lg:h-[400px] xl:h-[440px]">
+                <Reveal direction={isEven ? 'left' : 'right'} className="relative w-full flex-1 lg:h-[400px] xl:h-[440px]">
                   <AlternateImageMockup className={isEven ? "lg:right-0" : "lg:left-0"}>
                     <img
                         alt={s.alt}
@@ -94,7 +98,7 @@ export function Services() {
                         loading="lazy"
                     />
                   </AlternateImageMockup>
-                </div>
+                </Reveal>
               </div>
             );
           })}

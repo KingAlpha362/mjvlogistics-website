@@ -7,6 +7,7 @@ import { Coverage } from './components/Coverage.jsx';
 import { FleetStrip } from './components/FleetStrip.jsx';
 import { Leadership } from './components/Leadership.jsx';
 import { Contact } from './components/Contact.jsx';
+import { FooterCTA } from './components/FooterCTA.jsx';
 import { Footer } from './components/Footer.jsx';
 import { WhatsAppFloat } from './components/WhatsAppFloat.jsx';
 
@@ -24,6 +25,7 @@ export default function App() {
         <Leadership />
         <Contact />
       </main>
+      <FooterCTA />
       <Footer />
       <WhatsAppFloat />
     </>

@@ -2,7 +2,7 @@ import { PageContainer } from '../layout/PageContainer';
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-courier-ink py-14 text-center text-white">
+    <footer className="border-t border-white/10 bg-courier-ink pb-24 pt-14 text-center text-white sm:py-14">
       <PageContainer>
         <div className="inline-flex rounded-xl border border-white/20 bg-white px-8 py-3 shadow-lg">
           <img

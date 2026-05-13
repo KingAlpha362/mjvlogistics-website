@@ -43,7 +43,7 @@ export function Navbar() {
           <img
             src="images-mjv/mjv_logistics-logo.png"
             alt="MJV Courier"
-            className="h-10 w-auto md:h-11"
+            className="h-8 w-auto md:h-11"
             width="160"
             height="48"
           />
@@ -61,7 +61,7 @@ export function Navbar() {
         </nav>
         <a
           href="#contact"
-          className="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:px-5 md:text-base"
+          className="rounded-md bg-brand px-3 py-1.5 text-xs font-semibold text-white shadow-md transition hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:px-5 md:py-2 md:text-base"
         >
           Get a quote
         </a>

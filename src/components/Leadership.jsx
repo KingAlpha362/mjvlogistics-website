@@ -1,5 +1,5 @@
 import { PageContainer } from '../layout/PageContainer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { Reveal } from './ui/Reveal';
 
 const leaders = [
   { initials: 'MV', name: 'Myan Veerappa', role: 'Managing Director' },
@@ -8,16 +8,11 @@ const leaders = [
 ];
 
 export function Leadership() {
-  const reveal = useScrollReveal();
-
   return (
     <section id="leadership" className="bg-slate-100/80 py-20 md:py-28">
       <PageContainer>
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-          <div
-            ref={reveal}
-            className="glass-panel overflow-hidden rounded-2xl shadow-lg lg:sticky lg:top-28"
-          >
+          <Reveal className="glass-panel overflow-hidden rounded-2xl shadow-lg lg:sticky lg:top-28">
             <img
               src="images-mjv/vehicle-fleet-7.jpg"
               alt="MJV courier operations"
@@ -26,17 +21,21 @@ export function Leadership() {
               height={700}
               loading="lazy"
             />
-          </div>
+          </Reveal>
           <div>
             <header className="mb-10">
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-courier-ink md:text-4xl">
-                Courier <span className="text-brand">leadership</span>
-              </h2>
-              <p className="mt-4 max-w-xl text-lg text-courier-muted">
-                Decisions are made by people who still care about cut-off times and POD quality.
-              </p>
+              <Reveal>
+                <h2 className="font-display text-3xl font-extrabold tracking-tight text-courier-ink md:text-4xl">
+                  Courier <span className="text-brand">leadership</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-4 max-w-xl text-lg text-courier-muted">
+                  Decisions are made by people who still care about cut-off times and POD quality.
+                </p>
+              </Reveal>
             </header>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal stagger={0.12} delay={0.2} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {leaders.map((l) => (
                 <article
                   key={l.name}
@@ -49,7 +48,7 @@ export function Leadership() {
                   <p className="mt-1 text-xs font-bold uppercase tracking-wide text-brand">{l.role}</p>
                 </article>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </PageContainer>

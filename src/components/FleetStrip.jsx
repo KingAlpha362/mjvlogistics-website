@@ -1,5 +1,5 @@
 import { PageContainer } from '../layout/PageContainer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { Reveal } from './ui/Reveal';
 
 const imgs = [
   { src: 'images-mjv/vehicle-fleet-7.jpg', alt: 'Line-haul courier truck' },
@@ -8,18 +8,24 @@ const imgs = [
 ];
 
 export function FleetStrip() {
-  const reveal = useScrollReveal();
-
   return (
-    <section ref={reveal} className="border-b border-slate-200/80 bg-white py-14 md:py-16">
+    <section className="border-b border-slate-200/80 bg-white py-14 md:py-16">
       <PageContainer>
-        <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-brand">
-          Courier fleet
-        </p>
-        <h2 className="mt-1 max-w-md font-display text-2xl font-extrabold text-courier-ink md:text-3xl">
-          Vehicles built for time-definite runs
-        </h2>
-        <div className="mt-8 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <Reveal>
+          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-brand">
+            Courier fleet
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-1 max-w-md font-display text-2xl font-extrabold text-courier-ink md:text-3xl">
+            Vehicles built for time-definite runs
+          </h2>
+        </Reveal>
+        <Reveal
+          stagger={0.15}
+          delay={0.2}
+          className="mt-8 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {imgs.map((im) => (
             <img
               key={im.src}
@@ -31,7 +37,7 @@ export function FleetStrip() {
               loading="lazy"
             />
           ))}
-        </div>
+        </Reveal>
       </PageContainer>
     </section>
   );

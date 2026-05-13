@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { PageContainer } from '../layout/PageContainer';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { Reveal } from './ui/Reveal';
 
 export function Contact() {
   const [status, setStatus] = useState('idle');
-  const reveal = useScrollReveal();
 
   function onSubmit(e) {
     e.preventDefault();
@@ -18,153 +17,111 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-mesh-courier py-16 sm:py-20 md:py-28">
+    <section id="contact" className="bg-[#F9FAFB] py-20 sm:py-28 lg:py-32 relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 L60 0 M-10 10 L10 -10 M50 70 L70 50' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E")` }}></div>
+
       <PageContainer>
-        <div
-          ref={reveal}
-          className="flex flex-col overflow-hidden rounded-2xl border border-white/50 shadow-lift backdrop-blur-xl md:grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,1.05fr)]"
+        <Reveal
+          className="relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white shadow-[0_32px_120px_-20px_rgba(0,0,0,0.08)] md:grid md:grid-cols-[1fr_1.2fr]"
         >
-          <div className="relative h-56 sm:h-64 md:h-auto md:min-h-[min(100%,420px)]">
+          {/* Image Section - Showing the two vans */}
+          <div className="relative h-64 md:h-auto overflow-hidden bg-slate-100">
             <img
               src="images-mjv/vehicle-fleet-8.png"
-              alt="MJV courier vehicle"
-              className="h-full w-full object-cover opacity-95 md:min-h-[320px]"
-              width={480}
-              height={640}
-              loading="lazy"
+              alt="MJV courier vans"
+              className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
+              width={800}
+              height={1000}
             />
-            <div className="pointer-events-none absolute inset-0 bg-brand/25" aria-hidden="true" />
+            
+            {/* Branding Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <p className="text-white font-display text-lg font-bold tracking-tight">Reliable Fleet</p>
+              <p className="text-white/70 text-xs uppercase tracking-widest font-semibold mt-1">Ready for South Africa</p>
+            </div>
           </div>
 
-          <div className="glass-dark space-y-6 p-6 sm:p-8 md:p-10">
-            <h2 className="font-display text-3xl font-bold text-white">Dispatch desk</h2>
-            <p className="text-white/85">
-              Call or WhatsApp for urgent courier slots. Use the form for structured quotes.
-            </p>
-            <ul className="space-y-5 text-white">
-              <li className="flex gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 text-lg">
-                  📞
-                </span>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-white/60">
-                    General line
-                  </p>
-                  <p className="font-semibold">0861 MJVLOG (658564)</p>
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 text-lg">
-                  📠
-                </span>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-white/60">Fax</p>
-                  <p className="font-semibold">086 605 3498</p>
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 text-lg">
-                  💬
-                </span>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-white/60">
-                    WhatsApp
-                  </p>
-                  <a
-                    href="https://wa.me/27821234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold underline decoration-white/50 underline-offset-2 hover:text-white"
-                  >
-                    Message courier desk
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
+          {/* Form & Info Section */}
+          <div className="flex flex-col bg-white">
+            <div className="p-8 sm:p-12 lg:p-16">
+              <div className="mb-10">
+                <h2 className="font-display text-4xl font-extrabold text-courier-ink tracking-tight">
+                  Let's get moving
+                </h2>
+                <p className="mt-4 text-lg text-courier-muted max-w-md">
+                  Fill in your details below and our dispatch desk will reach out with a custom quote.
+                </p>
+              </div>
 
-          <div className="border-t border-slate-200/80 bg-white/90 p-6 sm:p-8 backdrop-blur-xl md:border-l md:border-t-0">
-            <header className="mb-6 border-b border-slate-200 pb-5">
-              <h3 className="font-display text-xl font-bold text-courier-ink md:text-2xl">
-                Book a courier
-              </h3>
-              <p id="form-hint" className="mt-2 text-sm text-courier-muted">
-                We reply in business hours. Add collection / delivery suburbs and your time window.
-              </p>
-            </header>
-            <form onSubmit={onSubmit} className="space-y-6" aria-describedby="form-hint">
-              <fieldset className="space-y-4 border-0 p-0">
-                <legend className="mb-2 font-display text-[10px] font-bold uppercase tracking-[0.15em] text-courier-muted">
-                  Your details
-                </legend>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <label className="block text-sm font-semibold text-courier-ink">
-                    Full name
+              <form onSubmit={onSubmit} className="space-y-8">
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-courier-ink uppercase tracking-wider">
+                      Full Name
+                    </label>
                     <input
                       name="name"
                       type="text"
                       required
-                      autoComplete="name"
-                      placeholder="e.g. Thabo Molefe"
-                      className="mt-1.5 w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-base outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+                      placeholder="Thabo Molefe"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-4 text-base transition-all focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10 outline-none"
                     />
-                  </label>
-                  <label className="block text-sm font-semibold text-courier-ink">
-                    Phone <span className="font-normal text-courier-muted">(optional)</span>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-courier-ink uppercase tracking-wider">
+                      Work Email
+                    </label>
                     <input
-                      name="phone"
-                      type="tel"
-                      autoComplete="tel"
-                      inputMode="tel"
-                      placeholder="082 000 0000"
-                      className="mt-1.5 w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-base outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="you@company.co.za"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-4 text-base transition-all focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10 outline-none"
                     />
-                  </label>
+                  </div>
                 </div>
-                <label className="block text-sm font-semibold text-courier-ink">
-                  Work email
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    placeholder="you@company.co.za"
-                    className="mt-1.5 w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-base outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
-                  />
-                </label>
-              </fieldset>
-              <fieldset className="space-y-3 border-0 p-0">
-                <legend className="mb-1 font-display text-[10px] font-bold uppercase tracking-[0.15em] text-courier-muted">
-                  Shipment brief
-                </legend>
-                <label className="block text-sm font-semibold text-courier-ink">
-                  What should we collect?
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-courier-ink uppercase tracking-wider">
+                    Shipment Brief
+                  </label>
                   <textarea
                     name="message"
                     required
-                    rows={5}
-                    placeholder="Suburbs, time window (overnight / same day), parcels or pallets, special handling."
-                    className="mt-1.5 w-full resize-y rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-base leading-relaxed outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20"
+                    rows={4}
+                    placeholder="Describe your shipment (suburbs, size, urgency...)"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-4 text-base transition-all focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10 outline-none resize-none"
                   />
-                </label>
-                <p className="text-xs text-courier-muted">
-                  More detail = faster routing to the right courier planner.
-                </p>
-              </fieldset>
-              <button
-                type="submit"
-                disabled={status === 'sending'}
-                className={`w-full rounded-md py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-brand-dark disabled:cursor-wait disabled:opacity-80 ${
-                  status === 'sent' ? 'bg-emerald-700 hover:bg-emerald-700' : 'bg-brand'
-                }`}
-              >
-                {status === 'sending' && 'Sending…'}
-                {status === 'sent' && 'Request sent — we’ll be in touch'}
-                {status === 'idle' && 'Send courier request'}
-              </button>
-            </form>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className={`w-full rounded-full py-5 text-lg font-bold text-white shadow-xl transition-all hover:-translate-y-1 active:translate-y-0 disabled:cursor-wait disabled:opacity-80 ${
+                    status === 'sent' ? 'bg-emerald-600' : 'bg-brand hover:bg-brand-dark'
+                  }`}
+                >
+                  {status === 'sending' && 'Processing Request...'}
+                  {status === 'sent' && 'Request Sent Successfully!'}
+                  {status === 'idle' && 'Send Courier Request'}
+                </button>
+              </form>
+
+              {/* Direct Contacts */}
+              <div className="mt-12 pt-10 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                  <p className="text-[10px] font-bold text-courier-muted uppercase tracking-[0.2em] mb-2">Direct Line</p>
+                  <a href="tel:0861658564" className="text-lg font-bold text-courier-ink hover:text-brand transition-colors">0861 MJVLOG (658564)</a>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-courier-muted uppercase tracking-[0.2em] mb-2">WhatsApp Desk</p>
+                  <a href="https://wa.me/27821234567" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-emerald-700 hover:text-emerald-800 transition-colors">Message Courier Desk</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </PageContainer>
     </section>
   );

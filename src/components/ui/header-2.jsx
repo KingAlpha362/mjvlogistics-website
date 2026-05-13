@@ -30,7 +30,7 @@ export function Header() {
 			className={cn(
 				'fixed top-0 z-50 mx-auto w-full border-b border-transparent md:transition-all md:ease-out left-0 right-0',
 				{
-					'bg-white/95 supports-[backdrop-filter]:bg-white/80 border-slate-200 backdrop-blur-lg md:top-4 md:max-w-5xl md:rounded-full md:border md:shadow-md':
+					'bg-white/95 supports-[backdrop-filter]:bg-white/80 border-slate-200 backdrop-blur-lg md:top-4 md:max-w-6xl md:rounded-full md:border md:shadow-md':
 						scrolled && !open,
 					'bg-white/90': open,
                     'bg-transparent': !scrolled && !open,
@@ -39,14 +39,14 @@ export function Header() {
 		>
 			<nav
 				className={cn(
-					'flex h-16 w-full items-center justify-between px-6 md:h-14 md:transition-all md:ease-out mx-auto max-w-page',
+					'flex h-16 w-full items-center justify-between px-page md:h-20 md:transition-all md:ease-out mx-auto max-w-page',
 					{
-						'md:px-6': scrolled,
+						'md:h-16 px-6 md:px-8': scrolled,
 					},
 				)}
 			>
 				<a href="#home" className="shrink-0 flex items-center">
-                   <img src="images-mjv/mjv_logistics-logo.png" alt="MJV Courier" className="h-8 w-auto md:h-10" />
+                   <img src="images-mjv/mjv_logistics-logo.png" alt="MJV Courier" className="h-8 w-auto md:h-12 transition-all duration-300" />
                 </a>
 				<div className="hidden items-center gap-2 md:flex">
 					{links.map((link, i) => (
@@ -65,7 +65,7 @@ export function Header() {
 
 			<div
 				className={cn(
-					'bg-white/95 fixed top-16 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-y border-slate-200 md:hidden backdrop-blur-md',
+					'bg-white/95 fixed top-20 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-y border-slate-200 md:hidden backdrop-blur-md',
 					open ? 'block' : 'hidden',
 				)}
 			>
